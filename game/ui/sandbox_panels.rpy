@@ -43,15 +43,16 @@ screen sandbox_ui(actions=[], travels=[]):
                     for move in travels:
                         $ can_move = unlocked_locations.get(move["key"], False)
                         $ move_tooltip = move.get("tooltip", "")
+                        $ move_tooltip_text = move_tooltip if move_tooltip else "Локация пока недоступна"
                         if can_move:
                             textbutton move["title"]:
                                 action Function(travel_to, move["key"])
-                                tooltip move_tooltip
+                                tooltip move_tooltip_text
                                 style "action_button"
                         else:
                             textbutton move["title"]:
                                 action NullAction()
-                                tooltip move_tooltip if move_tooltip else "Локация пока недоступна"
+                                tooltip move_tooltip_text
                                 style "disabled_button"
             frame:
                 background Solid(UI_COLORS["panel"])
