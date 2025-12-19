@@ -21,20 +21,11 @@ screen sandbox_ui(actions=[], travels=[]):
                         $ target_label = action.get("label")
 
                         if can_do and target_label:
-                            textbutton action.get("title"):
-                                action Jump(target_label)
-                                tooltip tooltip
-                                style "action_button"
+                            textbutton action.get("title") action Jump(target_label) tooltip tooltip style "action_button"
                         elif can_do:
-                            textbutton action.get("title"):
-                                action NullAction()
-                                tooltip "Требуется настроить метку действия"
-                                style "disabled_button"
+                            textbutton action.get("title") action NullAction() tooltip "Требуется настроить метку действия" style "disabled_button"
                         else:
-                            textbutton action.get("title"):
-                                action NullAction()
-                                tooltip reason
-                                style "disabled_button"
+                            textbutton action.get("title") action NullAction() tooltip reason style "disabled_button"
             frame:
                 background Solid(UI_COLORS["panel"])
                 xsize 250
@@ -45,10 +36,7 @@ screen sandbox_ui(actions=[], travels=[]):
                         $ move_tooltip_text = resolve_move_tooltip(move, can_move)
                         $ move_action = Function(travel_to, move["key"]) if can_move else NullAction()
                         $ move_style = "action_button" if can_move else "disabled_button"
-                        textbutton move["title"]:
-                            action move_action
-                            tooltip move_tooltip_text
-                            style move_style
+                        textbutton move["title"] action move_action tooltip move_tooltip_text style move_style
             frame:
                 background Solid(UI_COLORS["panel"])
                 xfill True
