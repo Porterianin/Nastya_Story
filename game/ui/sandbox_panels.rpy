@@ -42,8 +42,9 @@ screen sandbox_ui(actions=[], travels=[]):
                     label "Перемещения" style "hud_label"
                     for move in travels:
                         $ can_move = unlocked_locations.get(move["key"], False)
-                        $ move_tooltip = move.get("tooltip", "")
-                        $ move_tooltip_text = move_tooltip if move_tooltip else "Локация пока недоступна"
+                        python:
+                            move_tooltip = move.get("tooltip", "")
+                            move_tooltip_text = move_tooltip or "Локация пока недоступна"
                         if can_move:
                             textbutton move["title"]:
                                 action Function(travel_to, move["key"])
