@@ -15,15 +15,13 @@ init -1 style default:
 
 style action_button is default:
     background Solid(UI_COLORS["panel"])
+    hover_background Solid(UI_COLORS["accent"])
     foreground None
     padding (8, 8)
     xalign 0.0
 
 style action_button_text is default:
     color UI_COLORS["text"]
-
-style action_button_hover is action_button:
-    background Solid(UI_COLORS["accent"])
 
 style disabled_button is action_button:
     background Solid(UI_COLORS["disabled"])
