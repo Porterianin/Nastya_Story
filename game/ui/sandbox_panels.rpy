@@ -18,11 +18,18 @@ screen sandbox_ui(actions=[], travels=[]):
                         $ can_do = action.get("available", True)
                         $ reason = action.get("reason", "")
                         $ tooltip = action.get("tooltip", "")
-                        if can_do:
+                        $ target_label = action.get("label")
+
+                        if can_do and target_label:
                             textbutton action.get("title"):
-                                action Jump(action.get("label"))
+                                action Jump(target_label)
                                 tooltip tooltip
                                 style "action_button"
+                        elif can_do:
+                            textbutton action.get("title"):
+                                action NullAction()
+                                tooltip "Требуется настроить метку действия"
+                                style "disabled_button"
                         else:
                             textbutton action.get("title"):
                                 action NullAction()
@@ -35,10 +42,17 @@ screen sandbox_ui(actions=[], travels=[]):
                     label "Перемещения" style "hud_label"
                     for move in travels:
                         $ can_move = unlocked_locations.get(move["key"], False)
-                        textbutton move["title"]:
-                            action Function(travel_to, move["key"])
-                            tooltip move.get("tooltip", "")
-                            style "action_button"
+                        $ move_tooltip = move.get("tooltip", "")
+                        if can_move:
+                            textbutton move["title"]:
+                                action Function(travel_to, move["key"])
+                                tooltip move_tooltip
+                                style "action_button"
+                        else:
+                            textbutton move["title"]:
+                                action NullAction()
+                                tooltip move_tooltip if move_tooltip else "Локация пока недоступна"
+                                style "disabled_button"
             frame:
                 background Solid(UI_COLORS["panel"])
                 xfill True
