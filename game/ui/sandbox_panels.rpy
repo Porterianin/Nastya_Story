@@ -19,9 +19,15 @@ screen sandbox_ui(actions=[], travels=[]):
                         $ reason = action.get("reason", "")
                         $ tooltip = action.get("tooltip", "")
                         if can_do:
-                            textbutton action.get("title") action Jump(action.get("label")) tooltip tooltip style "action_button"
+                            textbutton action.get("title"):
+                                action Jump(action.get("label"))
+                                tooltip tooltip
+                                style "action_button"
                         else:
-                            textbutton action.get("title") action NullAction() tooltip reason style "disabled_button"
+                            textbutton action.get("title"):
+                                action NullAction()
+                                tooltip reason
+                                style "disabled_button"
             frame:
                 background Solid(UI_COLORS["panel"])
                 xsize 250
@@ -29,7 +35,10 @@ screen sandbox_ui(actions=[], travels=[]):
                     label "Перемещения" style "hud_label"
                     for move in travels:
                         $ can_move = unlocked_locations.get(move["key"], False)
-                        textbutton move["title"] action Function(travel_to, move["key"]) tooltip move.get("tooltip", "") style "action_button"
+                        textbutton move["title"]:
+                            action Function(travel_to, move["key"])
+                            tooltip move.get("tooltip", "")
+                            style "action_button"
             frame:
                 background Solid(UI_COLORS["panel"])
                 xfill True
