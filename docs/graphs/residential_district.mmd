@@ -1,0 +1,36 @@
+flowchart TD
+    RD["Спальный район\nhc_residential_district"]
+    Street["Улица / двор"]
+    House["Двухподъездный пятиэтажный дом"]
+    Shop["Магазин"]
+    Cafe["Кафе"]
+    Stop["Автобусная остановка"]
+    University["Гиперкластер: Университет"]
+
+    RD --> Street
+    Street --> House
+    Street --> Shop
+    Street --> Cafe
+    Street --> Stop
+    Stop --> University
+
+    House --> Entrance1["Подъезд №1"]
+    House --> Entrance2["Подъезд №2 — заглушка"]
+    House --> Roof["Крыша"]
+    House --> Basement["Подвал — нужен квестовый ключ"]
+
+    Entrance1 --> Floor3["3 этаж"]
+    Floor3 --> Apt5["Квартира №5\nНастя + Маша"]
+    Floor3 --> Apt6["Квартира №6\nНика"]
+
+    Apt5 --> Hall["Прихожая"]
+    Hall --> Room["Комната"]
+    Hall --> Kitchen["Кухня"]
+    Hall --> Bathroom["Ванная + туалет"]
+    Room --> Balcony["Балкон"]
+
+    Apt6 --> NikaHall["Прихожая Ники\nдоступна 29 августа"]
+    NikaHall -. позже .-> NikaKitchen["Кухня"]
+    NikaHall -. позже .-> NikaBedroom["Спальня"]
+    NikaHall -. позже .-> NikaLiving["Гостиная"]
+    NikaHall -. позже .-> Studio["Фотостудия"]
