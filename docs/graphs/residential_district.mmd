@@ -1,25 +1,32 @@
 flowchart TD
-    RD["Спальный район\nhc_residential_district"]
-    Street["Улица / двор"]
-    House["Двухподъездный пятиэтажный дом"]
-    Shop["Магазин"]
-    Cafe["Кафе"]
-    Stop["Автобусная остановка"]
-    University["Гиперкластер: Университет"]
+    RD["СУПЕРХАБ: Спальный район\nhc_residential_district"]
 
-    RD --> Street
-    Street --> House
-    Street --> Shop
-    Street --> Cafe
-    Street --> Stop
-    Stop --> University
+    House["Наш дом"]
+    Shop["Мини-маркет"]
+    Cafe["Кафе ~15 столиков"]
+    School["Школа Маши\nвход пока закрыт"]
+    Stop["Автобусная остановка\nвыход в другие суперхабы"]
+    Playground["Детская площадка"]
+
+    RD --> House
+    RD --> Shop
+    RD --> Cafe
+    RD --> School
+    RD --> Stop
 
     House --> Entrance1["Подъезд №1"]
     House --> Entrance2["Подъезд №2 — заглушка"]
-    House --> Roof["Крыша"]
-    House --> Basement["Подвал — нужен квестовый ключ"]
+    House --> Playground
+    House --> Home["Домой\nбыстрый переход в прихожую №5"]
 
+    Entrance1 --> Floor1["1 этаж"]
+    Entrance1 --> Floor2["2 этаж"]
     Entrance1 --> Floor3["3 этаж"]
+    Entrance1 --> Floor4["4 этаж"]
+    Entrance1 --> Floor5["5 этаж"]
+    Entrance1 --> Roof["Крыша"]
+    Entrance1 --> Basement["Подвал — нужен квестовый ключ"]
+
     Floor3 --> Apt5["Квартира №5\nНастя + Маша"]
     Floor3 --> Apt6["Квартира №6\nНика"]
 
@@ -34,3 +41,11 @@ flowchart TD
     NikaHall -. позже .-> NikaBedroom["Спальня"]
     NikaHall -. позже .-> NikaLiving["Гостиная"]
     NikaHall -. позже .-> Studio["Фотостудия"]
+
+    Cafe --> CafeHall["Зал"]
+    Cafe --> AslanOffice["Кабинет Аслана"]
+    Cafe --> Backroom["Подсобка / гардероб"]
+    Cafe --> CafeToilet["Туалет"]
+    Cafe --> CafeKitchen["Кухня — пока закрыта"]
+
+    Stop -. "автобус / время поездки" .-> University["СУПЕРХАБ: Университет"]
