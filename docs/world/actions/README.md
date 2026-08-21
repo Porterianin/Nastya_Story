@@ -1,3 +1,7 @@
-# Действия
+# Действия — карта раздела
 
-Data-driven карточки игровых действий: условия, время, энергия, эффекты, кулдауны, тексты выполнения/отказа и реакции NPC. Использовать `docs/templates/ACTION_TEMPLATE.md`.
+Карточки игровых действий: условия, время, энергия, эффекты, кулдауны, тексты выполнения/отказа и реакции NPC. Для новых самостоятельных действий использовать [`../../templates/ACTION_TEMPLATE.md`](../../templates/ACTION_TEMPLATE.md).
+
+- [`ACTIONS_29_AUGUST.md`](ACTIONS_29_AUGUST.md) — семантика действий первого управляемого дня; числовой баланс остаётся в централизованных системных таблицах.
+
+Связанные системы: [`../../systems/TIME_ACTIONS_QUESTS_EVENTS_SPEC.md`](../../systems/TIME_ACTIONS_QUESTS_EVENTS_SPEC.md), [`../../systems/ACTION_EFFECT_COOLDOWNS_SPEC.md`](../../systems/ACTION_EFFECT_COOLDOWNS_SPEC.md).
