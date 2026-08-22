@@ -2,9 +2,10 @@
 
 Здесь хранится непосредственно читаемый игроком контент. Механики и канонические свойства персонажей сюда не дублируются.
 
-- [`DIALOGUE_WRITING_GUIDE.md`](DIALOGUE_WRITING_GUIDE.md) — общие правила речи, диалогов и экранных блоков Ren'Py.
+- [`ADULT_EROTIC_TONE_GUIDE.md`](ADULT_EROTIC_TONE_GUIDE.md) — каноническая жанровая установка взрослой эротической песочницы, принцип постепенного нарастания откровенности и ненавязчивая ситуативная оптика.
+- [`DIALOGUE_WRITING_GUIDE.md`](DIALOGUE_WRITING_GUIDE.md) — общие правила речи, описательной части, физической непрерывности и экранных блоков Ren'Py.
 - [`scenes/`](scenes/) — канонические сцены и дневные сюжетные каркасы.
 - [`dialogues/`](dialogues/) — готовые и модульные диалоги.
 - [`descriptions/`](descriptions/) — описания локаций, объектов и действий.
 
-Для текста с персонажами сначала читать канон реально участвующих персонажей: [`../world/characters/`](../world/characters/). Верхнеуровневая карта проекта: [`../MASTER_SPEC.md`](../MASTER_SPEC.md).
+Для текста с персонажами сначала читать канон реально участвующих персонажей: [`../world/characters/`](../world/characters/). При создании или существенной редактуре игровой сцены применять вместе [`ADULT_EROTIC_TONE_GUIDE.md`](ADULT_EROTIC_TONE_GUIDE.md) и [`DIALOGUE_WRITING_GUIDE.md`](DIALOGUE_WRITING_GUIDE.md). Верхнеуровневая карта проекта: [`../MASTER_SPEC.md`](../MASTER_SPEC.md).
